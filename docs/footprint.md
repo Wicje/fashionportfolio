@@ -18,9 +18,9 @@
 - **Env / secrets needed:** _e.g. none, or SENTRY_DSN in .env.local_
 
 ## 2. Current state (update every task — 3 lines max)
-- **Last known good:** 2026-09-21 — beauty pass live (Fraunces, grain, reveals), prod green
-- **Now working on:** nothing — awaiting owner photos (biggest remaining lever) / next brief
-- **Blocked / needs human:** real photos for gallery + portrait; Vercel git auto-deploy
+- **Last known good:** 2026-09-21 — full 49-frame book live, real portrait, prod green
+- **Now working on:** nothing — book complete; next brief welcome
+- **Blocked / needs human:** Vercel git auto-deploy (one-shot CLI deploys until connected)
 - **Blocked / needs human:** real photos/bio/credits/booking email pending from owner
 
 ## 3. Decisions (why, not what — append, never rewrite)
@@ -106,6 +106,12 @@
 - Reason: owner picked all four beauty levers; photos still pending
 - Checks: lint pass, build pass, Fraunces @font-face verified in shipped CSS, prod 4×200
 - Notes: unused ui primitives left on neutrals deliberately (unrendered, no drive-by refactor)
+
+## 2026-09-21 — full book with real photos, redeployed
+- Changed: 49 frames in `public/book`, new frame-numbered works data, `WorkCard` w/ next/image shared by gallery+preview, real about portrait, filters removed; brief+spec updated; pushed `2808872`, redeployed prod
+- Reason: owner said use all — full session shown, no fake genre labels
+- Checks: lint pass, build pass, prod HTML has 49 /book refs + portrait, 4×200
+- Notes: 6 frames spot-verified for specific alts, rest conservative-but-true; assumption: all 48 JPGs are outdoor portraits of Ani (sequential shoot, sizes cluster)
 
 ## 5. Open TODOs / Next steps
 - [x] ticket 01 gallery-filters done (`/work` route, lint+build green)
