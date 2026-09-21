@@ -11,7 +11,7 @@ export default function ContactPage() {
   return (
     <main className="bg-offwhite">
       <div className="mx-auto flex min-h-[70vh] w-full max-w-2xl flex-col justify-center px-4 py-16 text-center sm:px-6 sm:py-24">
-        <Text as="h1" className="font-serif text-charcoal">
+        <Text as="h1" className="font-display text-charcoal">
           Let&apos;s make something
         </Text>
         <Text className="mx-auto mt-4 max-w-md text-lg text-charcoal/80">
@@ -30,7 +30,7 @@ export default function ContactPage() {
           <ul className="mt-8 flex justify-center gap-6">
             {SITE.socials.map((social) => (
               <li key={social.href}>
-                <a href={social.href} className="text-sm font-medium text-neutral-700 underline underline-offset-4 hover:text-neutral-900">
+                <a href={social.href} className="text-sm font-medium text-charcoal/70 underline underline-offset-4 hover:text-charcoal">
                   {social.label}
                 </a>
               </li>

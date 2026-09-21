@@ -26,7 +26,7 @@ export function Gallery({ works = WORKS, categories = CATEGORIES }: GalleryProps
 
   return (
     <Container className="py-12 sm:py-16">
-      <Text as="h1" className="font-serif text-charcoal">
+      <Text as="h1" className="font-display text-charcoal">
         Selected Work
       </Text>
       <Text className="mt-3 max-w-xl text-charcoal/70">
@@ -49,7 +49,7 @@ export function Gallery({ works = WORKS, categories = CATEGORIES }: GalleryProps
 
       {visible.length === 0 ? (
         <div className="mt-10 rounded-xl border border-dashed border-charcoal/30 bg-charcoal/5 px-6 py-16 text-center">
-          <Text as="h2" className="font-serif text-2xl text-charcoal">
+          <Text as="h2" className="font-display text-2xl text-charcoal">
             No works in {active} yet
           </Text>
           <Text className="mx-auto mt-2 max-w-md text-charcoal/70">
@@ -60,18 +60,18 @@ export function Gallery({ works = WORKS, categories = CATEGORIES }: GalleryProps
         <ul aria-label={`Works${active === "All" ? "" : ` in ${active}`}`} className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((work) => (
             <li key={work.id}>
-              <figure className="overflow-hidden rounded-xl border border-charcoal/15 bg-offwhite">
+                <figure className="group overflow-hidden rounded-xl border border-charcoal/15 bg-offwhite">
                 <div
                   role="img"
                   aria-label={work.alt}
                   className={`flex aspect-[3/4] items-end bg-gradient-to-br p-5 ${PALETTES[work.palette]}`}
                 >
-                  <span aria-hidden="true" className="rounded-full bg-peach px-3 py-1 font-serif text-sm italic text-charcoal">
+                  <span aria-hidden="true" className="rounded-full bg-peach px-3 py-1 font-display text-sm italic text-charcoal transition-transform duration-500 ease-out group-hover:-translate-y-1 motion-reduce:transition-none">
                     {work.title}
                   </span>
                 </div>
                 <figcaption className="flex items-baseline justify-between gap-3 px-4 py-3">
-                  <span className="font-serif text-base text-charcoal">{work.title}</span>
+                  <span className="font-display text-base text-charcoal">{work.title}</span>
                   <span className="shrink-0 text-xs tracking-wide text-charcoal/70 uppercase">{work.category}</span>
                 </figcaption>
               </figure>

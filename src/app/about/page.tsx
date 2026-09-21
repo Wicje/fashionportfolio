@@ -18,12 +18,12 @@ export default function AboutPage() {
             aria-label={`Stand-in portrait of ${SITE.name}`}
             className="flex aspect-[3/4] items-end bg-gradient-to-br from-charcoal via-[#3a3e45] to-ember p-5 rounded-xl border border-charcoal/15"
           >
-            <span aria-hidden="true" className="rounded-full bg-peach px-3 py-1 font-serif text-sm italic text-charcoal">
+            <span aria-hidden="true" className="rounded-full bg-peach px-3 py-1 font-display text-sm italic text-charcoal">
               Portrait to come
             </span>
           </div>
           <div>
-            <Text as="h1" className="font-serif text-charcoal">
+            <Text as="h1" className="font-display text-charcoal">
               About
             </Text>
             {BIO.map((paragraph) => (
@@ -33,7 +33,7 @@ export default function AboutPage() {
             ))}
             {CREDITS.length > 0 && (
               <>
-                <Text as="h2" className="mt-10 font-serif text-2xl text-charcoal">
+                <Text as="h2" className="mt-10 font-display text-2xl text-charcoal">
                   Selected credits
                 </Text>
                 <ul className="mt-4 space-y-2">
