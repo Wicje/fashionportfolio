@@ -125,6 +125,12 @@
 - Checks: lint pass, build pass, prod 3×200 with frame indices + counts in HTML
 - Notes: home keeps editorial sections under the blueprint hero — deliberate contrast, revisit if wanted
 
+## 2026-09-21 — square corners site-wide, redeployed
+- Changed: removed all rounded-* classes (buttons, cards, figures, footer card, links); pushed `5f6a9fb`, redeployed prod
+- Reason: owner wants rectangular corners, not round — matches blueprint grid language
+- Checks: lint pass, build pass, prod `/` 200
+- Notes: spinner + plus-mark wings keep rounded-full (1px lines, invisible); footprint empty-commit `08c9688` superseded by this entry
+
 ## 5. Open TODOs / Next steps
 - [x] ticket 01 gallery-filters done (`/work` route, lint+build green)
 - [x] ticket 02 hero-cta done (live on Vercel, lint+build green)
