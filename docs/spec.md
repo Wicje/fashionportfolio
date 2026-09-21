@@ -17,9 +17,9 @@ if that slice sings, the rest is composition.
 
 ## 3. User stories
 
-- As an art director, I can browse works and filter by category, so that I
-  find relevant work fast. Acceptance: filters switch the visible set,
-  keyboard-operable, empty category shows an intentional empty state.
+- As a visitor, I can browse every frame of the book in shoot order, so that
+  I see the full range. Acceptance: all frames render with honest captions;
+  no genre labels on uninspected frames.
 - As an art director, I can read a short bio with credits/clients, so that
   I trust the photographer. Acceptance: bio + credits render on all widths.
 - As an art director, I can contact via email in one click, so that I can
@@ -30,10 +30,9 @@ if that slice sings, the rest is composition.
 ## 4. Implementation decisions
 
 - Seams (public interfaces): route-per-section (`/` hero, work gallery route,
-  about route, contact route); `Gallery` self-contained (owns active-category
-  state; accepts works + categories data); `ContactCTA` renders a mailto
-  anchor (no action/backend); gallery content is data-driven so owner assets
-  replace stand-ins without behavior change.
+  about route, contact route); `Gallery` renders the full book from works
+  data (frame number + caption per entry); `WorkCard` shared by gallery grid
+  and home preview; `ContactCTA` renders a mailto anchor (no action/backend).
 - Testing seams: gallery filter behavior through its props/render contract;
   mailto CTA asserted as anchor attributes; route smoke via e2e.
 - Out-of-scope for v1: see §6.

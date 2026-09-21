@@ -10,8 +10,9 @@ trusts the photographer, and contacts via email. Single conversion: click contac
 
 ## 3. Sections (v1)
 1. **Hero** — name, one-line positioning, CTA to contact + selected-work teaser.
-2. **Gallery** — work grid with category filters (e.g. Editorial / Campaign /
-   Portrait — labels confirmed at build). Keyboard-accessible filter controls.
+2. **Gallery ("The Book")** — every frame from the session in shoot order,
+   numbered Frame Nº 01–49. No genre filters: frames are shown, not labelled
+   (filters would mislabel uninspected frames).
 3. **About / Bio** — face, short bio, selected credits / clients / publications.
 4. **Contact** — `mailto:` link/CTA (+ social links if supplied). No form backend.
 

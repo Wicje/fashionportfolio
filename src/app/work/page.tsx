@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Gallery } from "@/components/gallery";
 
 export const metadata: Metadata = {
-  title: "Selected Work",
-  description: "Selected shots from Ani Chisom's book. Filter by category.",
+  title: "The Book",
+  description: "Every frame from Ani Chisom's Africanus session, in shoot order.",
 };
 
 export default function WorkPage() {

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 import { Text } from "@/components/ui/text";
 import { BIO, CREDITS, SITE } from "@/data/site";
+import { PORTRAIT_ALT, PORTRAIT_SRC } from "@/data/works";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `Bio, credits, and clients of ${SITE.name}, fashion photographer.`,
+  description: `Bio of ${SITE.name}, engineer and aspiring model.`,
 };
 
 export default function AboutPage() {
@@ -13,14 +15,15 @@ export default function AboutPage() {
     <main className="bg-offwhite">
       <Container className="py-12 sm:py-16">
         <div className="grid gap-10 sm:grid-cols-[2fr_3fr] sm:gap-12">
-          <div
-            role="img"
-            aria-label={`Stand-in portrait of ${SITE.name}`}
-            className="flex aspect-[3/4] items-end bg-gradient-to-br from-charcoal via-[#3a3e45] to-ember p-5 rounded-xl border border-charcoal/15"
-          >
-            <span aria-hidden="true" className="rounded-full bg-peach px-3 py-1 font-display text-sm italic text-charcoal">
-              Portrait to come
-            </span>
+          <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-charcoal/15 bg-charcoal/10">
+            <Image
+              src={PORTRAIT_SRC}
+              alt={PORTRAIT_ALT}
+              fill
+              sizes="(min-width: 640px) 40vw, 100vw"
+              className="object-cover"
+              priority
+            />
           </div>
           <div>
             <Text as="h1" className="font-display text-charcoal">

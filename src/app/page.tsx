@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { WorkCard } from "@/components/gallery";
 import { Reveal } from "@/components/reveal";
 import { Text } from "@/components/ui/text";
 import { SITE } from "@/data/site";
@@ -88,24 +89,7 @@ export default function Home() {
             {PREVIEW.map((work, index) => (
               <li key={work.id}>
                 <Reveal delay={index === 0 ? 0 : 100}>
-                  <figure className="group overflow-hidden rounded-xl border border-charcoal/15 bg-offwhite">
-                    <div
-                      role="img"
-                      aria-label={work.alt}
-                      className="flex aspect-[3/4] items-end overflow-hidden bg-gradient-to-br from-ember via-peach to-[#e8b4a0] p-5"
-                    >
-                      <span
-                        aria-hidden="true"
-                        className="rounded-full bg-peach px-3 py-1 font-display text-sm italic text-charcoal transition-transform duration-500 ease-out group-hover:-translate-y-1 motion-reduce:transition-none"
-                      >
-                        {work.title}
-                      </span>
-                    </div>
-                    <figcaption className="flex items-baseline justify-between gap-3 px-4 py-3">
-                      <span className="font-display text-base text-charcoal">{work.title}</span>
-                      <span className="shrink-0 text-xs tracking-wide text-charcoal/70 uppercase">{work.category}</span>
-                    </figcaption>
-                  </figure>
+                  <WorkCard work={work} />
                 </Reveal>
               </li>
             ))}
