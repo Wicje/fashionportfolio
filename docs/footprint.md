@@ -18,8 +18,9 @@
 - **Env / secrets needed:** _e.g. none, or SENTRY_DSN in .env.local_
 
 ## 2. Current state (update every task — 3 lines max)
-- **Last known good:** 2026-09-21 — all 4 routes live, lint+build pass, CI green
-- **Now working on:** ticket 05 nav-polish (frontier, unblocked)
+- **Last known good:** 2026-09-21 — v1 complete, all 5 tickets done, prod green (4×200)
+- **Now working on:** nothing — v1 shipped; awaiting owner content / next brief
+- **Blocked / needs human:** real photos/bio/credits/booking email + name swap; Vercel git auto-deploy
 - **Blocked / needs human:** real photos/bio/credits/booking email pending from owner
 
 ## 3. Decisions (why, not what — append, never rewrite)
@@ -82,11 +83,19 @@
 - Checks: lint pass, build pass (4 routes), prod `/about` + `/contact` 200
 - Notes: socials render only if supplied (currently none — no dead icons); booking email stand-in pending owner
 
+## 2026-09-21 — ticket 05 nav-polish done, v1 complete
+- Changed: new `src/components/site-nav.tsx`; header/footer chrome in root layout; pushed `3e3c462`, redeployed prod
+- Reason: ticket 05 — one shared chrome, current-page indication, footer booking email
+- Checks: lint pass, build pass; prod `/ /work /about /contact` all 200, `aria-current` verified in HTML
+- Notes: v1 scope fully shipped; contrast AA-passing pairs only; e2e still stub (no harness)
+
 ## 5. Open TODOs / Next steps
 - [x] ticket 01 gallery-filters done (`/work` route, lint+build green)
 - [x] ticket 02 hero-cta done (live on Vercel, lint+build green)
 - [x] tickets 03 about-bio, 04 contact-mailto done (live, `/about` + `/contact` 200)
-- [ ] ticket 05 nav-polish ready (unblocked — all routes exist)
+- [x] ticket 05 nav-polish done (shared header/footer, aria-current, verified live)
+- [ ] owner to supply: real photos, bio, credits, booking email, name (single swap in site data)
+- [ ] optional: connect Vercel git auto-deploy; real test:e2e route smoke; lightbox (out of v1 scope)
 - [ ] ticket 05 nav-polish blocked by 02–04
 - [ ] owner to supply: real photos, bio, credits, booking email
 - [ ] note: no `test:unit` harness in package.json — unit N/A until one is added
