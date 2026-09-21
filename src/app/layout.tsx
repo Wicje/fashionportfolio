@@ -17,10 +17,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE.name} — Fashion Photographer`,
+    default: `${SITE.name} — Aspiring Model`,
     template: `%s — ${SITE.name}`,
   },
-  description: "Editorial, campaign, and portrait fashion photography. Available for bookings.",
+  description: "Ani Chisom — engineer and aspiring model. Editorial, campaign, and portrait collaborations.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -31,16 +31,20 @@ export default function AboutPage() {
                 {paragraph}
               </Text>
             ))}
-            <Text as="h2" className="mt-10 font-serif text-2xl">
-              Selected credits
-            </Text>
-            <ul className="mt-4 space-y-2">
-              {CREDITS.map((credit) => (
-                <li key={credit} className="border-b border-neutral-200 pb-2 text-base text-neutral-700">
-                  {credit}
-                </li>
-              ))}
-            </ul>
+            {CREDITS.length > 0 && (
+              <>
+                <Text as="h2" className="mt-10 font-serif text-2xl">
+                  Selected credits
+                </Text>
+                <ul className="mt-4 space-y-2">
+                  {CREDITS.map((credit) => (
+                    <li key={credit} className="border-b border-neutral-200 pb-2 text-base text-neutral-700">
+                      {credit}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
           </div>
         </div>
       </Container>

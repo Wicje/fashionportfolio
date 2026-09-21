@@ -4,7 +4,7 @@ import { SITE } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Book a shoot with ${SITE.name}, fashion photographer.`,
+  description: `Collaborate with ${SITE.name}, aspiring model.`,
 };
 
 export default function ContactPage() {
@@ -15,8 +15,8 @@ export default function ContactPage() {
           Let&apos;s make something
         </Text>
         <Text className="mx-auto mt-4 max-w-md text-lg">
-          Currently booking editorial, campaign, and portrait work. Tell me about
-          your project — I reply within two days.
+          Currently open to editorial, campaign, and portrait collaborations.
+          Tell me about your project — I reply within two days.
         </Text>
         <div className="mt-10">
           <a
