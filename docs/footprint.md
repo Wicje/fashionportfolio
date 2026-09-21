@@ -7,19 +7,20 @@
 
 ## 1. Snapshot (stable — update only when it changes)
 - **Project:** fashionportfolio
-- **What it is (1 line):** _e.g. Landing page for a fashion photographer_
+- **What it is (1 line):** Luxury-soft portfolio for a fashion photographer (win client bookings)
 - **Stack:** Next.js + TypeScript + Tailwind (factory default)
 - **Template:** unknown (landing | portfolio | dashboard | none)
 - **Key routes/files:**
   - `src/app/page.tsx` — main page
+  - `src/app/work/page.tsx` — filterable gallery (ticket 01)
   - `src/components/ui/` — shared components (do not duplicate)
-- **Accounts:** github: no | vercel: no | supabase: no
+- **Accounts:** github: yes (Wicje/fashionportfolio) | vercel: yes (fashionportfolio-phi.vercel.app) | supabase: no
 - **Env / secrets needed:** _e.g. none, or SENTRY_DSN in .env.local_
 
 ## 2. Current state (update every task — 3 lines max)
-- **Last known good:** 2026-09-21 — committed `b3ea4d4` locally (gallery + CI test stubs)
-- **Now working on:** blocked deploy — sandbox has no outbound HTTPS (github/vercel time out)
-- **Blocked / needs human:** push `main` from own machine, then connect repo in Vercel dashboard
+- **Last known good:** 2026-09-21 — live on Vercel, CI green, `/` + `/work` 200
+- **Now working on:** ticket 02 hero-cta (frontier, unblocked)
+- **Blocked / needs human:** real photos/bio/credits/booking email pending from owner
 
 ## 3. Decisions (why, not what — append, never rewrite)
 | Date | Decision | Why |
@@ -62,6 +63,12 @@
 - Reason: CI workflow requires those scripts; push to GitHub for Vercel-connected deploy
 - Checks: lint pass; `gh repo create` + push failed — TLS timeout to github.com/vercel.com from sandbox
 - Notes: human must `gh repo create fashionportfolio --public --source=. --push` from own machine, then Add New Project in Vercel
+
+## 2026-09-21 — pushed + deployed to Vercel
+- Changed: network recovered; pushed `main` to `Wicje/fashionportfolio`; `vercel deploy --prod`
+- Reason: user asked to retry push + deploy
+- Checks: CI success; prod `/` 200, `/work` 200 with gallery SSR content
+- Notes: live at https://fashionportfolio-phi.vercel.app (Vercel acct `anichisom4top`); recommend connecting git repo in dashboard for auto-deploys
 
 ## 5. Open TODOs / Next steps
 - [x] ticket 01 gallery-filters done (`/work` route, lint+build green)
