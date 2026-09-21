@@ -18,8 +18,8 @@
 - **Env / secrets needed:** _e.g. none, or SENTRY_DSN in .env.local_
 
 ## 2. Current state (update every task — 3 lines max)
-- **Last known good:** 2026-09-21 — hero live on Vercel, lint+build pass, CI green
-- **Now working on:** tickets 03 about-bio, 04 contact-mailto (frontier, unblocked)
+- **Last known good:** 2026-09-21 — all 4 routes live, lint+build pass, CI green
+- **Now working on:** ticket 05 nav-polish (frontier, unblocked)
 - **Blocked / needs human:** real photos/bio/credits/booking email pending from owner
 
 ## 3. Decisions (why, not what — append, never rewrite)
@@ -76,10 +76,17 @@
 - Checks: lint pass, build pass, prod `/` 200
 - Notes: primary CTA points at `/contact` (lands with ticket 04); stand-in name Ava Laurent pending owner
 
+## 2026-09-21 — tickets 03 + 04 done + redeployed
+- Changed: new `src/data/site.ts`, `src/app/about/page.tsx`, `src/app/contact/page.tsx`; hero reads name from site data; fixed contact max-width conflict; pushed `6d4ade3`+`43e7c26`, redeployed prod
+- Reason: tickets 03 (bio+credits) + 04 (mailto CTA, no-JS anchor verified in SSR HTML)
+- Checks: lint pass, build pass (4 routes), prod `/about` + `/contact` 200
+- Notes: socials render only if supplied (currently none — no dead icons); booking email stand-in pending owner
+
 ## 5. Open TODOs / Next steps
 - [x] ticket 01 gallery-filters done (`/work` route, lint+build green)
 - [x] ticket 02 hero-cta done (live on Vercel, lint+build green)
-- [ ] tickets 03 about-bio, 04 contact-mailto ready (parallelizable)
+- [x] tickets 03 about-bio, 04 contact-mailto done (live, `/about` + `/contact` 200)
+- [ ] ticket 05 nav-polish ready (unblocked — all routes exist)
 - [ ] ticket 05 nav-polish blocked by 02–04
 - [ ] owner to supply: real photos, bio, credits, booking email
 - [ ] note: no `test:unit` harness in package.json — unit N/A until one is added
