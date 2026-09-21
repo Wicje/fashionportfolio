@@ -5,6 +5,7 @@
   --color-offwhite: #faf6ef;
   --color-peach: #f2a172;
   --color-ember: #9c4e22;
+  --color-cobalt: #1e40af;
   --font-display: var(--font-fraunces), Georgia, serif;
 }
 
@@ -45,4 +46,16 @@ body {
 .grain > * {
   position: relative;
   z-index: 2;
+}
+
+/* Offset-print halftone dots over duotone imagery. Decorative only. */
+.halftone {
+  background-image: radial-gradient(circle, rgb(20 32 80 / 0.5) 1px, transparent 1.4px);
+  background-size: 4px 4px;
+  mix-blend-mode: multiply;
+}
+
+/* Luminance-mapped cobalt/ivory duotone for the hero frame. */
+.duotone-frame {
+  filter: url(#africanus-duotone) grayscale(1) contrast(1.1);
 }
