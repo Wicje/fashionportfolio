@@ -18,8 +18,8 @@
 - **Env / secrets needed:** _e.g. none, or SENTRY_DSN in .env.local_
 
 ## 2. Current state (update every task — 3 lines max)
-- **Last known good:** 2026-09-21 — blueprint hero + watermark footer live, prod green
-- **Now working on:** nothing — other sections still in editorial style (next if wanted)
+- **Last known good:** 2026-09-21 — unified blueprint system live on all pages, prod green
+- **Now working on:** nothing — system coherent; next brief welcome
 - **Blocked / needs human:** Vercel git auto-deploy; socials URLs if wanted in footer
 - **Blocked / needs human:** real photos/bio/credits/booking email pending from owner
 
@@ -118,6 +118,12 @@
 - Reason: owner pasted Chainova/Otto components — adapted language, rejected fabricated stats/logos/testimonials per skill anti-patterns
 - Checks: lint pass, build pass, no inline styles, prod 4×200 with hero + watermark in HTML
 - Notes: work/about/contact sections keep editorial style — unify next if wanted
+
+## 2026-09-21 — blueprint unification, redeployed
+- Changed: new shared `BlueprintPage` frame; work/about/contact recomposed inside it (indices 04–06); Gallery grid-only; mono captions; pushed `e9cb846`, redeployed prod
+- Reason: owner said unify — one system across all pages
+- Checks: lint pass, build pass, prod 3×200 with frame indices + counts in HTML
+- Notes: home keeps editorial sections under the blueprint hero — deliberate contrast, revisit if wanted
 
 ## 5. Open TODOs / Next steps
 - [x] ticket 01 gallery-filters done (`/work` route, lint+build green)
