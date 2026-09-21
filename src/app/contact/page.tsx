@@ -21,7 +21,7 @@ export default function ContactPage() {
         <div className="flex flex-col items-start gap-8 py-4">
           <a
             href={`mailto:${SITE.bookingEmail}`}
-            className="inline-flex h-14 items-center justify-center rounded-md bg-peach px-8 text-lg font-medium text-charcoal transition-colors hover:bg-ember hover:text-offwhite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2"
+            className="inline-flex h-14 items-center justify-center bg-peach px-8 text-lg font-medium text-charcoal transition-colors hover:bg-ember hover:text-offwhite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2"
           >
             {SITE.bookingEmail}
           </a>

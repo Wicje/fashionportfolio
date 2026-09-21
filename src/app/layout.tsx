@@ -40,7 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-4 py-4 sm:px-6">
             <Link
               href="/"
-              className="font-display text-xl rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2"
+              className="font-display text-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2"
             >
               {SITE.name}
             </Link>
@@ -49,7 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </header>
         <div className="flex-1">{children}</div>
         <footer role="contentinfo" aria-label="Site footer" className="bg-offwhite px-3 pt-6 pb-5 sm:px-6 lg:px-10">
-          <div className="relative mx-auto flex w-full max-w-6xl flex-col overflow-hidden rounded-3xl bg-charcoal text-offwhite">
+          <div className="relative mx-auto flex w-full max-w-6xl flex-col overflow-hidden bg-charcoal text-offwhite">
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -bottom-24 left-1/2 h-72 w-[130%] -translate-x-1/2 bg-[linear-gradient(90deg,rgb(242_161_114/0.35),rgb(242_161_114/0.12))] blur-3xl"
@@ -59,7 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 <Link
                   href="/"
                   aria-label={`${SITE.name} home`}
-                  className="font-display text-2xl rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal"
+                  className="font-display text-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal"
                 >
                   {SITE.name}
                 </Link>
@@ -68,7 +68,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 </p>
                 <a
                   href={`mailto:${SITE.bookingEmail}`}
-                  className="rounded-sm text-sm font-medium text-peach underline underline-offset-4 hover:text-offwhite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal"
+                  className="text-sm font-medium text-peach underline underline-offset-4 hover:text-offwhite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal"
                 >
                   {SITE.bookingEmail}
                 </a>
@@ -88,7 +88,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                       <li key={link.href}>
                         <a
                           href={link.href}
-                          className="rounded-sm text-base text-offwhite/80 transition-colors hover:text-peach focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal"
+                          className="text-base text-offwhite/80 transition-colors hover:text-peach focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal"
                         >
                           {link.label}
                         </a>
@@ -108,7 +108,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                             href={social.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="rounded-sm text-base text-offwhite/80 transition-colors hover:text-peach focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal"
+                            className="text-base text-offwhite/80 transition-colors hover:text-peach focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal"
                           >
                             {social.label}
                           </a>

@@ -21,7 +21,7 @@ export default function AboutPage() {
       >
         <div className="grid gap-10 sm:grid-cols-[2fr_3fr] sm:gap-12">
           <figure>
-            <div className="relative aspect-[3/4] overflow-hidden rounded-xl border border-charcoal/15 bg-charcoal/10">
+            <div className="relative aspect-[3/4] overflow-hidden border border-charcoal/15 bg-charcoal/10">
               <Image
                 src={PORTRAIT_SRC}
                 alt={PORTRAIT_ALT}

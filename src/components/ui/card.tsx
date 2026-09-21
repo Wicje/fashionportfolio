@@ -5,9 +5,9 @@ import type { HTMLAttributes } from "react";
 type Variant = "default" | "subtle" | "feature";
 
 const variants: Record<Variant, string> = {
-  default: "rounded-xl border border-neutral-200 bg-white p-6",
-  subtle: "rounded-xl border border-neutral-100 bg-neutral-50 p-6",
-  feature: "rounded-xl border border-neutral-200 bg-white p-8 shadow-sm",
+  default: "border border-neutral-200 bg-white p-6",
+  subtle: "border border-neutral-100 bg-neutral-50 p-6",
+  feature: "border border-neutral-200 bg-white p-8 shadow-sm",
 };
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {

@@ -196,7 +196,15 @@ export function DitherFrame({
   }, [src, ink, paper, cell, dot]);
 
   return (
-    <div ref={wrapRef} role="img" aria-label={alt} className={`relative h-full min-h-[280px] w-full sm:min-h-[360px] ${className ?? ""}`}>
+    <div ref={wrapRef} role="img" aria-label={alt} className={`relative h-full min-h-[280px] w-full overflow-hidden bg-offwhite sm:min-h-[360px] ${className ?? ""}`}>
+      {/* Static fallback: duotone-tinted photo behind the canvas, so the
+          frame is never an empty block if canvas paint fails. */}
+      <img
+        src={src}
+        alt=""
+        aria-hidden="true"
+        className="duotone-fallback absolute inset-0 h-full w-full object-cover"
+      />
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
     </div>
   );

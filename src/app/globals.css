@@ -63,3 +63,8 @@ body {
     transparent 7px
   );
 }
+
+/* Cobalt-tinted static fallback behind the dither canvas. Decorative. */
+.duotone-fallback {
+  filter: grayscale(1) sepia(0.45) hue-rotate(185deg) saturate(2.2);
+}

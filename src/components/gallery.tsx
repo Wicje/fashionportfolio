@@ -8,7 +8,7 @@ export interface GalleryProps {
 
 export function WorkCard({ work }: { work: Work }) {
   return (
-    <figure className="group overflow-hidden rounded-xl border border-charcoal/15 bg-offwhite">
+    <figure className="group overflow-hidden border border-charcoal/15 bg-offwhite">
       <div className="relative aspect-[3/4] overflow-hidden bg-charcoal/10">
         <Image
           src={work.src}
@@ -29,7 +29,7 @@ export function WorkCard({ work }: { work: Work }) {
 export function Gallery({ works = WORKS }: GalleryProps) {
   if (works.length === 0) {
     return (
-      <div className="rounded-xl border border-dashed border-charcoal/30 bg-charcoal/5 px-6 py-16 text-center">
+      <div className="border border-dashed border-charcoal/30 bg-charcoal/5 px-6 py-16 text-center">
         <Text as="h2" className="font-display text-2xl text-charcoal">
           No frames yet
         </Text>

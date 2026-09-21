@@ -23,7 +23,7 @@ export function SiteNav() {
               <Link
                 href={link.href}
                 aria-current={current ? "page" : undefined}
-                className={`rounded-sm text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2 ${
+                className={`text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2 ${
                   current ? "text-ember underline underline-offset-4" : "text-charcoal/70 hover:text-charcoal"
                 }`}
               >

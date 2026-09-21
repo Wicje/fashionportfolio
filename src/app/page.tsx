@@ -31,7 +31,7 @@ export default function Home() {
     <main>
       {/* Hero — blueprint frame: honest stats, copy, dithered frame */}
       <section aria-labelledby="hero-heading" className="px-3 sm:px-6 lg:px-10">
-        <div className="relative mx-auto flex max-w-6xl flex-col border-x border-charcoal/15">
+        <div className="relative mx-auto flex max-w-6xl flex-col border-x border-b border-charcoal/15">
           <GridPlus edge="left" className="top-0 left-0" />
           <GridPlus edge="right" className="top-0 left-full" />
 
@@ -86,13 +86,13 @@ export default function Home() {
                   <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                     <Link
                       href="/contact"
-                      className="inline-flex h-12 items-center justify-center rounded-md bg-peach px-6 text-base font-medium text-charcoal transition-colors hover:bg-ember hover:text-offwhite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2"
+                      className="inline-flex h-12 items-center justify-center bg-peach px-6 text-base font-medium text-charcoal transition-colors hover:bg-ember hover:text-offwhite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2"
                     >
                       Book Ani
                     </Link>
                     <Link
                       href="/work"
-                      className="inline-flex h-12 items-center justify-center rounded-md border border-charcoal/25 bg-transparent px-6 text-base font-medium text-charcoal transition-colors hover:bg-charcoal/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2"
+                      className="inline-flex h-12 items-center justify-center border border-charcoal/25 bg-transparent px-6 text-base font-medium text-charcoal transition-colors hover:bg-charcoal/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2"
                     >
                       View selected work
                     </Link>
@@ -126,64 +126,72 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Selected work preview — one idea: the imagery */}
-      <section aria-labelledby="work-heading" className="border-b border-charcoal/15">
-        <Container className="py-12 sm:py-16">
-          <Reveal>
-            <SectionIndex value="01" label="The book" />
-          </Reveal>
-          <Reveal delay={100}>
-            <div className="mt-4 flex flex-wrap items-end justify-between gap-4">
-              <Text as="h2" id="work-heading" className="font-display text-charcoal">
-                Selected work
-              </Text>
-              <Link
-                href="/work"
-                className="rounded-sm text-sm font-medium text-ember underline underline-offset-4 hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2"
-              >
-                Browse the full book
-              </Link>
-            </div>
-          </Reveal>
-          <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
-            {PREVIEW.map((work, index) => (
-              <li key={work.id}>
-                <Reveal delay={index === 0 ? 0 : 100}>
-                  <WorkCard work={work} />
-                </Reveal>
-              </li>
-            ))}
-          </ul>
-        </Container>
+      {/* Selected work preview — second plate */}
+      <section aria-labelledby="work-heading" className="px-3 sm:px-6 lg:px-10">
+        <div className="relative mx-auto max-w-6xl border-x border-b border-charcoal/15">
+          <Container className="py-12 sm:py-16">
+            <Reveal>
+              <SectionIndex value="01" label="The book" />
+            </Reveal>
+            <Reveal delay={100}>
+              <div className="mt-4 flex flex-wrap items-end justify-between gap-4">
+                <Text as="h2" id="work-heading" className="font-display text-charcoal">
+                  Selected work
+                </Text>
+                <Link
+                  href="/work"
+                  className="text-sm font-medium text-ember underline underline-offset-4 hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2"
+                >
+                  Browse the full book
+                </Link>
+              </div>
+            </Reveal>
+            <ul className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
+              {PREVIEW.map((work, index) => (
+                <li key={work.id}>
+                  <Reveal delay={index === 0 ? 0 : 100}>
+                    <WorkCard work={work} />
+                  </Reveal>
+                </li>
+              ))}
+            </ul>
+          </Container>
+          <GridPlus edge="left" className="top-full left-0" />
+          <GridPlus edge="right" className="top-full left-full" />
+        </div>
       </section>
 
-      {/* About teaser — one idea: the duality */}
-      <section aria-labelledby="about-heading" className="border-b border-charcoal/15">
-        <Container className="grid gap-6 py-12 sm:grid-cols-[1fr_2fr] sm:gap-12 sm:py-16">
-          <Reveal>
-            <SectionIndex value="02" label="The profile" />
-            <Text as="h2" id="about-heading" className="mt-4 font-display text-2xl text-charcoal">
-              Engineer,
-              <br />
-              meet muse
-            </Text>
-          </Reveal>
-          <Reveal delay={100}>
-            <div className="flex flex-col justify-end">
-              <Text className="text-charcoal/80">
-                {SITE.name} — {SITE.aka} to those who know him — builds hardware
-                and software by day and steps in front of the camera by calling.
-                Technical mind, model presence.
+      {/* About teaser — third plate */}
+      <section aria-labelledby="about-heading" className="px-3 sm:px-6 lg:px-10">
+        <div className="relative mx-auto max-w-6xl border-x border-b border-charcoal/15">
+          <Container className="grid gap-6 py-12 sm:grid-cols-[1fr_2fr] sm:gap-12 sm:py-16">
+            <Reveal>
+              <SectionIndex value="02" label="The profile" />
+              <Text as="h2" id="about-heading" className="mt-4 font-display text-2xl text-charcoal">
+                Engineer,
+                <br />
+                meet muse
               </Text>
-              <Link
-                href="/about"
-                className="mt-4 inline-block self-start rounded-sm text-sm font-medium text-ember underline underline-offset-4 hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2"
-              >
-                Read the full story
-              </Link>
-            </div>
-          </Reveal>
-        </Container>
+            </Reveal>
+            <Reveal delay={100}>
+              <div className="flex flex-col justify-end">
+                <Text className="text-charcoal/80">
+                  {SITE.name} — {SITE.aka} to those who know him — builds hardware
+                  and software by day and steps in front of the camera by calling.
+                  Technical mind, model presence.
+                </Text>
+                <Link
+                  href="/about"
+                  className="mt-4 inline-block self-start text-sm font-medium text-ember underline underline-offset-4 hover:text-charcoal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2"
+                >
+                  Read the full story
+                </Link>
+              </div>
+            </Reveal>
+          </Container>
+          <GridPlus edge="left" className="top-full left-0" />
+          <GridPlus edge="right" className="top-full left-full" />
+        </div>
       </section>
 
       {/* CTA band — one idea: the conversion */}
@@ -199,7 +207,7 @@ export default function Home() {
             </Text>
             <Link
               href="/contact"
-              className="mt-8 inline-flex h-12 items-center justify-center rounded-md bg-peach px-8 text-base font-medium text-charcoal transition-all hover:-translate-y-0.5 hover:bg-offwhite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal motion-reduce:transition-colors motion-reduce:hover:translate-y-0"
+              className="mt-8 inline-flex h-12 items-center justify-center bg-peach px-8 text-base font-medium text-charcoal transition-all hover:-translate-y-0.5 hover:bg-offwhite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal motion-reduce:transition-colors motion-reduce:hover:translate-y-0"
             >
               Book Ani
             </Link>
