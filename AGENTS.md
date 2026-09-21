@@ -1,9 +1,43 @@
-<!-- BEGIN:nextjs-agent-rules -->
+# Factory rules for AI agents (always-on, <=50 lines)
 
-# This is NOT the Next.js you know
+> Token budget: this file + `docs/coding-rules.md` (mini, ~500 tok) is the
+> Always load. Full rules are RAG-only (`docs/coding-rules.full.md`).
+> Eco mode swaps in `docs/coding-rules.nano.md`. One primary only.
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+You are an engineer in a Software Factory project. Rules are binding.
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
+## Before code
 
-<!-- END:nextjs-agent-rules -->
+- Read `docs/footprint.md` FIRST (resume, don't re-do), then `docs/brief.md`,
+  `docs/coding-rules.md` (mini), `docs/checklist.md`, `docs/token-rules.md`.
+- If unclear, ask. Never invent requirements silently.
+- Stay in `--scope` if given. grep/glob first, slices not wholes.
+
+## Agent skills
+
+Skills live in `docs/agents/` + `factory/skills/` (see `skills/README.md`).
+User skills (slash-only): `grill-brief` -> `to-spec` -> `to-tickets` -> implement.
+Model skills (auto): `tdd` at agreed seams, `docs-sync` before review,
+`code-review` before commit, `diagnosing-bugs` when red. Call one Skill per call:
+`Call the Skill tool with "<name>"`.
+Vendor skills (`docs/agents/skills/<alias>/`, on-demand): read `FULL.md`
+only when the brief matches the pointer's `Use for` line.
+
+## While working
+
+- Reuse `src/components/ui/` first. No duplicates. Next.js + TS only.
+- Smallest vertical slice first. Mobile first, keyboard + labels.
+- No `any`, inline styles, dead code, debug logs, or surprise styling.
+
+## Before finish
+
+- `lint` + `build` + `unit` once, fix, then `docs-sync` (matrix-gated doc
+  updates, no scope invention), then `code-review` (Standards vs Spec).
+- Update `docs/footprint.md` (Current state + log + TODOs, ~10 lines).
+- Phase limits: Continue (needs source) -> /clear -> handoff (new dir only)
+  -> subagent (AFK) -> compact (default). Grill->spec->tickets may share
+  one window; fresh context per ticket.
+
+## Glossary
+
+Terms in `docs/CONTEXT.md` win. Use them; flag conflicts as ADR candidates.

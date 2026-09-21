@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:unit": "echo 'no unit harness yet (ticket: add vitest at first testable seam)' && exit 0",
+    "test:e2e": "echo 'no e2e harness yet (ticket: add playwright with route smoke)' && exit 0"
   },
   "dependencies": {
     "next": "16.3.5",
