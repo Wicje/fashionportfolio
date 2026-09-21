@@ -18,8 +18,8 @@
 - **Env / secrets needed:** _e.g. none, or SENTRY_DSN in .env.local_
 
 ## 2. Current state (update every task — 3 lines max)
-- **Last known good:** 2026-09-21 — live on Vercel, CI green, `/` + `/work` 200
-- **Now working on:** ticket 02 hero-cta (frontier, unblocked)
+- **Last known good:** 2026-09-21 — hero live on Vercel, lint+build pass, CI green
+- **Now working on:** tickets 03 about-bio, 04 contact-mailto (frontier, unblocked)
 - **Blocked / needs human:** real photos/bio/credits/booking email pending from owner
 
 ## 3. Decisions (why, not what — append, never rewrite)
@@ -70,9 +70,16 @@
 - Checks: CI success; prod `/` 200, `/work` 200 with gallery SSR content
 - Notes: live at https://fashionportfolio-phi.vercel.app (Vercel acct `anichisom4top`); recommend connecting git repo in dashboard for auto-deploys
 
+## 2026-09-21 — ticket 02 hero-cta done + redeployed
+- Changed: rewrote home route (hero + 2 CTAs), site title template in layout; pushed `d689af3`, `vercel deploy --prod`
+- Reason: ticket 02 — first impression + booking path
+- Checks: lint pass, build pass, prod `/` 200
+- Notes: primary CTA points at `/contact` (lands with ticket 04); stand-in name Ava Laurent pending owner
+
 ## 5. Open TODOs / Next steps
 - [x] ticket 01 gallery-filters done (`/work` route, lint+build green)
-- [ ] tickets 02 hero-cta, 03 about-bio, 04 contact-mailto ready (parallelizable)
+- [x] ticket 02 hero-cta done (live on Vercel, lint+build green)
+- [ ] tickets 03 about-bio, 04 contact-mailto ready (parallelizable)
 - [ ] ticket 05 nav-polish blocked by 02–04
 - [ ] owner to supply: real photos, bio, credits, booking email
 - [ ] note: no `test:unit` harness in package.json — unit N/A until one is added
