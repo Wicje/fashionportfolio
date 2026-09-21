@@ -2,7 +2,7 @@
 
 import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "outline" | "ghost" | "danger";
+type Variant = "primary" | "secondary" | "outline" | "ghost" | "danger" | "peach";
 type Size = "sm" | "md" | "lg";
 
 const base =
@@ -12,9 +12,10 @@ const variants: Record<Variant, string> = {
   primary: "bg-neutral-900 text-white hover:bg-neutral-700 focus-visible:ring-neutral-900",
   secondary: "bg-neutral-100 text-neutral-900 hover:bg-neutral-200 focus-visible:ring-neutral-400",
   outline:
-    "border border-neutral-300 bg-transparent text-neutral-900 hover:bg-neutral-50 focus-visible:ring-neutral-400",
+    "border border-charcoal/25 bg-transparent text-charcoal hover:bg-charcoal/5 focus-visible:ring-charcoal",
   ghost: "text-neutral-900 hover:bg-neutral-100 focus-visible:ring-neutral-400",
   danger: "bg-red-600 text-white hover:bg-red-500 focus-visible:ring-red-500",
+  peach: "bg-peach text-charcoal hover:bg-ember hover:text-offwhite focus-visible:ring-ember",
 };
 
 const sizes: Record<Size, string> = {

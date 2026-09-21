@@ -22,9 +22,12 @@ trusts the photographer, and contacts via email. Single conversion: click contac
   must read as intentional, not lorem ipsum.
 
 ## 5. Design direction
-Luxury soft: soft neutrals, elegant serif display + clean sans body, generous
-whitespace, image-led. Mobile-first (375px → up). No surprise styling beyond
-this direction.
+Brand system (owner-supplied): charcoal `#23262B`, offwhite `#FAF6EF`,
+peach `#F2A172` (+ deep ember `#9C4E22` for small-text accents). Thesis:
+warm editorial confidence — charcoal ink on offwhite paper, peach as the
+spark. Elegant serif display + clean sans body, generous whitespace,
+image-led. All text pairs AA-verified (lowest: ember/offwhite 5.53).
+Mobile-first (375px → up). No surprise styling beyond this direction.
 
 ## 6. Must-work states
 - Gallery: loading skeletons (or instant if local data), empty state per
@@ -44,3 +47,6 @@ this direction.
 - 2026-09-21: mailto over form-backend — keep v1 shippable, no DB needed.
 - 2026-09-21: grid + category filters (no lightbox) — fast, accessible v1.
 - 2026-09-21: hybrid content (owner assets + AI stand-ins).
+- 2026-09-21: brand pivot luxury-soft → charcoal/offwhite/peach (owner request);
+  home enriched to 4 sections (hero, work preview, about teaser, CTA band) per
+  frontend-design skill (marketing mode, one idea per section).

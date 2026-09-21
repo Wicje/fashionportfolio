@@ -29,8 +29,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-stone-50 text-neutral-900">
-        <header className="border-b border-neutral-200 bg-stone-50">
+      <body className="min-h-full flex flex-col bg-offwhite text-charcoal">
+        <header className="border-b border-charcoal/15 bg-offwhite">
           <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-4 py-4 sm:px-6">
             <Link
               href="/"
@@ -42,14 +42,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </div>
         </header>
         <div className="flex-1">{children}</div>
-        <footer className="border-t border-neutral-200">
+        <footer className="bg-charcoal text-offwhite">
           <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-6 sm:px-6">
-            <p className="text-sm text-neutral-600">
+            <p className="text-sm text-offwhite/80">
               © {new Date().getFullYear()} {SITE.name} — {SITE.role}
             </p>
             <a
               href={`mailto:${SITE.bookingEmail}`}
-              className="rounded-sm text-sm font-medium text-neutral-600 underline underline-offset-4 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-900 focus-visible:ring-offset-2"
+              className="rounded-sm text-sm font-medium text-peach underline underline-offset-4 hover:text-offwhite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal"
             >
               {SITE.bookingEmail}
             </a>
