@@ -48,14 +48,18 @@ body {
   z-index: 2;
 }
 
-/* Offset-print halftone dots over duotone imagery. Decorative only. */
-.halftone {
-  background-image: radial-gradient(circle, rgb(20 32 80 / 0.5) 1px, transparent 1.4px);
-  background-size: 4px 4px;
-  mix-blend-mode: multiply;
+/* Giant footer watermark: ivory outline only, decorative. */
+.watermark-outline {
+  -webkit-text-stroke: 1px rgb(250 246 239 / 0.28);
 }
 
-/* Luminance-mapped cobalt/ivory duotone for the hero frame. */
-.duotone-frame {
-  filter: url(#africanus-duotone) grayscale(1) contrast(1.1);
+/* Blueprint hatch fill for the hero stats strip. Decorative. */
+.hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgb(35 38 43 / 0.15) 0,
+    rgb(35 38 43 / 0.15) 1px,
+    transparent 1px,
+    transparent 7px
+  );
 }

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { DitherFrame } from "@/components/dither-frame";
+import { GridPlus } from "@/components/grid-plus";
 import { WorkCard } from "@/components/gallery";
 import { Reveal } from "@/components/reveal";
 import { Text } from "@/components/ui/text";
@@ -28,66 +29,101 @@ function SectionIndex({ value, label }: { value: string; label: string }) {
 export default function Home() {
   return (
     <main>
-      {/* Hero — one idea: the name over the treated frame */}
-      <section aria-labelledby="hero-heading" className="relative overflow-hidden bg-cobalt">
-        {/* True two-tone duotone: luminance mapped cobalt shadows → ivory highlights */}
-        <svg aria-hidden="true" className="absolute h-0 w-0">
-          <defs>
-            <filter id="africanus-duotone">
-              <feColorMatrix
-                type="matrix"
-                values="0.183 0.617 0.062 0 0.118  0.152 0.511 0.052 0 0.251  0.053 0.180 0.018 0 0.686  0 0 0 1 0"
-              />
-            </filter>
-          </defs>
-        </svg>
-        <div aria-hidden="true" className="absolute inset-0">
-          <Image
-            src="/book/ani-21.jpg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-top duotone-frame"
-          />
-        </div>
-        <div aria-hidden="true" className="halftone absolute inset-0" />
-        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-cobalt via-cobalt/35 to-cobalt/10" />
-        <Container className="relative py-20 sm:py-32">
-          <Reveal>
-            <p className="text-xs font-medium tracking-[0.2em] text-offwhite/90 uppercase">
-              {SITE.tagline} — Africanus session
-            </p>
-          </Reveal>
-          <Reveal delay={100}>
-            <Text as="h1" id="hero-heading" className="mt-4 max-w-3xl font-display text-6xl leading-[1.02] text-offwhite sm:text-8xl">
-              {SITE.name}
-              <span aria-hidden="true" className="text-peach">.</span>
-            </Text>
-          </Reveal>
-          <Reveal delay={200}>
-            <Text className="mt-6 max-w-xl text-lg text-offwhite/90">
-              Hardware and software engineer by craft, model by calling — open to
-              editorial, campaign, and portrait collaborations.
-            </Text>
-          </Reveal>
-          <Reveal delay={200}>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex h-12 items-center justify-center rounded-md bg-peach px-6 text-base font-medium text-charcoal transition-colors hover:bg-offwhite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offwhite focus-visible:ring-offset-2 focus-visible:ring-offset-cobalt"
-              >
-                Book Ani
-              </Link>
-              <Link
-                href="/work"
-                className="inline-flex h-12 items-center justify-center rounded-md border border-offwhite/40 bg-transparent px-6 text-base font-medium text-offwhite transition-colors hover:bg-offwhite/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offwhite focus-visible:ring-offset-2 focus-visible:ring-offset-cobalt"
-              >
-                View selected work
-              </Link>
+      {/* Hero — blueprint frame: honest stats, copy, dithered frame */}
+      <section aria-labelledby="hero-heading" className="px-3 sm:px-6 lg:px-10">
+        <div className="relative mx-auto flex max-w-6xl flex-col border-x border-charcoal/15">
+          <GridPlus edge="left" className="top-0 left-0" />
+          <GridPlus edge="right" className="top-0 left-full" />
+
+          {/* Stats strip */}
+          <div className="relative grid grid-cols-1 border-b border-charcoal/15 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+            <GridPlus edge="left" className="top-full left-0" />
+            <GridPlus edge="right" className="top-full left-full" />
+            <div
+              aria-hidden="true"
+              className="hatch hidden min-h-[56px] border-r border-charcoal/15 lg:block"
+            />
+            <dl className="flex flex-col items-start justify-center gap-4 px-4 py-4 sm:flex-row sm:items-center sm:gap-8 sm:px-5 lg:gap-10 lg:px-6">
+              {[
+                { value: "49", label: "Frames in the book" },
+                { value: "01", label: "Outdoor session" },
+                { value: "02", label: "Crafts — code & camera" },
+              ].map((stat) => (
+                <div key={stat.label} className="flex min-w-0 flex-col">
+                  <dt className="order-2 mt-1.5 text-[10px] font-normal tracking-[0.1em] text-charcoal/60 uppercase">
+                    {stat.label}
+                  </dt>
+                  <dd className="order-1 font-mono text-2xl tracking-tight text-charcoal">
+                    {stat.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          {/* Copy + dither */}
+          <div className="relative grid flex-1 grid-cols-1 border-b border-charcoal/15 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+            <div className="flex items-center border-b border-charcoal/15 px-4 py-10 sm:px-6 lg:border-r lg:border-b-0 lg:px-10">
+              <div className="w-full min-w-0">
+                <Reveal>
+                  <p className="text-xs font-medium tracking-[0.2em] text-ember uppercase">
+                    {SITE.tagline} — Africanus session
+                  </p>
+                </Reveal>
+                <Reveal delay={100}>
+                  <Text as="h1" id="hero-heading" className="mt-4 font-display text-6xl leading-[1.02] text-charcoal sm:text-7xl">
+                    {SITE.name}
+                    <span aria-hidden="true" className="text-peach">.</span>
+                  </Text>
+                </Reveal>
+                <Reveal delay={200}>
+                  <Text className="mt-6 max-w-xl text-lg text-charcoal/80">
+                    Hardware and software engineer by craft, model by calling — open to
+                    editorial, campaign, and portrait collaborations.
+                  </Text>
+                </Reveal>
+                <Reveal delay={200}>
+                  <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+                    <Link
+                      href="/contact"
+                      className="inline-flex h-12 items-center justify-center rounded-md bg-peach px-6 text-base font-medium text-charcoal transition-colors hover:bg-ember hover:text-offwhite focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2"
+                    >
+                      Book Ani
+                    </Link>
+                    <Link
+                      href="/work"
+                      className="inline-flex h-12 items-center justify-center rounded-md border border-charcoal/25 bg-transparent px-6 text-base font-medium text-charcoal transition-colors hover:bg-charcoal/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal focus-visible:ring-offset-2"
+                    >
+                      View selected work
+                    </Link>
+                  </div>
+                </Reveal>
+              </div>
             </div>
-          </Reveal>
-        </Container>
+            <div className="relative min-h-[300px] sm:min-h-[380px] lg:min-h-[480px]">
+              <DitherFrame
+                src="/book/ani-21.jpg"
+                alt="Bayer-dithered close-up of Ani Chisom against the sky, cobalt ink on offwhite"
+                className="absolute inset-0"
+              />
+              <p className="absolute bottom-3 left-4 font-mono text-[10px] tracking-[0.18em] text-charcoal/70 uppercase">
+                Frame Nº 21 — close-up
+              </p>
+            </div>
+          </div>
+
+          {/* Bottom strip */}
+          <div className="relative flex items-center justify-between gap-4 px-4 py-3 sm:px-6">
+            <GridPlus edge="left" className="top-full left-0" />
+            <GridPlus edge="right" className="top-full left-full" />
+            <p className="font-mono text-[10px] tracking-[0.18em] text-charcoal/60 uppercase">
+              Shot outdoors in natural light
+            </p>
+            <p className="hidden font-mono text-[10px] tracking-[0.18em] text-charcoal/60 uppercase sm:block">
+              49 frames — shoot order
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Selected work preview — one idea: the imagery */}
