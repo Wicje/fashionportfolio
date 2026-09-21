@@ -18,7 +18,7 @@
 - **Env / secrets needed:** _e.g. none, or SENTRY_DSN in .env.local_
 
 ## 2. Current state (update every task — 3 lines max)
-- **Last known good:** 2026-09-21 — Ani's real identity live, model framing, prod green
+- **Last known good:** 2026-09-21 — brand redesign live, 4-section home, all routes 200
 - **Now working on:** nothing — awaiting owner photos / next brief
 - **Blocked / needs human:** real photos for gallery + portrait; Vercel git auto-deploy
 - **Blocked / needs human:** real photos/bio/credits/booking email pending from owner
@@ -94,6 +94,12 @@
 - Reason: owner supplied real identity — stand-in persona removed
 - Checks: lint pass, build pass, prod `/` shows Ani Chisom
 - Notes: gallery imagery + portrait still stand-ins; fictional credits removed (honesty)
+
+## 2026-09-21 — brand redesign + richer home, redeployed
+- Changed: theme tokens, peach Button variant, brand chrome/gallery/about/contact, 4-section home, color-explicit Text; brief §5+§8 updated; pushed `e709d18`, redeployed prod
+- Reason: owner asked for frontend-design skill pass — boring/short page + charcoal/offwhite/peach brand
+- Checks: lint pass, build pass, contrast math AA (min 5.48 after /70 fix), prod 4×200 with all sections in HTML
+- Notes: limitation — no screenshot tooling, verification is HTML/build level; keyboard via native controls + focus rings by construction
 
 ## 5. Open TODOs / Next steps
 - [x] ticket 01 gallery-filters done (`/work` route, lint+build green)
