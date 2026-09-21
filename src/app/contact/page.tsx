@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Container } from "@/components/ui/container";
 import { Text } from "@/components/ui/text";
 import { SITE } from "@/data/site";
 
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="bg-stone-50">
-      <Container className="flex min-h-[70vh] max-w-2xl flex-col justify-center py-16 text-center sm:py-24">
+      <div className="mx-auto flex min-h-[70vh] w-full max-w-2xl flex-col justify-center px-4 py-16 text-center sm:px-6 sm:py-24">
         <Text as="h1" className="font-serif">
           Let&apos;s make something
         </Text>
@@ -38,7 +37,7 @@ export default function ContactPage() {
             ))}
           </ul>
         )}
-      </Container>
+      </div>
     </main>
   );
 }
