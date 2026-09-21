@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/ui/container";
+import { SITE } from "@/data/site";
 import { Text } from "@/components/ui/text";
 
 export const metadata: Metadata = {
@@ -16,7 +17,7 @@ export default function Home() {
           Fashion photographer
         </Text>
         <Text as="h1" className="mt-4 max-w-2xl font-serif text-5xl sm:text-7xl">
-          Ava Laurent
+                    {SITE.name}
         </Text>
         <Text className="mt-6 max-w-xl text-lg">
           Editorial, campaign, and portrait photography with a soft, cinematic eye —
