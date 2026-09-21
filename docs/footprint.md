@@ -18,8 +18,8 @@
 - **Env / secrets needed:** _e.g. none, or SENTRY_DSN in .env.local_
 
 ## 2. Current state (update every task — 3 lines max)
-- **Last known good:** 2026-09-21 — brand redesign live, 4-section home, all routes 200
-- **Now working on:** nothing — awaiting owner photos / next brief
+- **Last known good:** 2026-09-21 — beauty pass live (Fraunces, grain, reveals), prod green
+- **Now working on:** nothing — awaiting owner photos (biggest remaining lever) / next brief
 - **Blocked / needs human:** real photos for gallery + portrait; Vercel git auto-deploy
 - **Blocked / needs human:** real photos/bio/credits/booking email pending from owner
 
@@ -100,6 +100,12 @@
 - Reason: owner asked for frontend-design skill pass — boring/short page + charcoal/offwhite/peach brand
 - Checks: lint pass, build pass, contrast math AA (min 5.48 after /70 fix), prod 4×200 with all sections in HTML
 - Notes: limitation — no screenshot tooling, verification is HTML/build level; keyboard via native controls + focus rings by construction
+
+## 2026-09-21 — beauty pass (type + editorial + motion), redeployed
+- Changed: Fraunces display font, numbered sections, grain overlays, Reveal (IO-based, motion-safe), chip hovers, color-explicit Text; pushed `5face1b`, redeployed prod
+- Reason: owner picked all four beauty levers; photos still pending
+- Checks: lint pass, build pass, Fraunces @font-face verified in shipped CSS, prod 4×200
+- Notes: unused ui primitives left on neutrals deliberately (unrendered, no drive-by refactor)
 
 ## 5. Open TODOs / Next steps
 - [x] ticket 01 gallery-filters done (`/work` route, lint+build green)
