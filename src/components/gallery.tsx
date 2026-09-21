@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Container } from "@/components/ui/container";
 import { Text } from "@/components/ui/text";
 import { WORKS, type Work } from "@/data/works";
 
@@ -21,40 +20,33 @@ export function WorkCard({ work }: { work: Work }) {
       </div>
       <figcaption className="flex items-baseline justify-between gap-3 px-4 py-3">
         <span className="font-display text-base text-charcoal">{work.title}</span>
-        <span className="shrink-0 text-xs tracking-wide text-charcoal/70 uppercase">Africanus session</span>
+        <span className="shrink-0 font-mono text-[11px] tracking-[0.14em] text-charcoal/60 uppercase">Africanus session</span>
       </figcaption>
     </figure>
   );
 }
 
 export function Gallery({ works = WORKS }: GalleryProps) {
-  return (
-    <Container className="py-12 sm:py-16">
-      <Text as="h1" className="font-display text-charcoal">
-        The Book
-      </Text>
-      <Text className="mt-3 max-w-xl text-charcoal/70">
-        {works.length} frames, one session. The full Africanus book, in shoot order.
-      </Text>
+  if (works.length === 0) {
+    return (
+      <div className="rounded-xl border border-dashed border-charcoal/30 bg-charcoal/5 px-6 py-16 text-center">
+        <Text as="h2" className="font-display text-2xl text-charcoal">
+          No frames yet
+        </Text>
+        <Text className="mx-auto mt-2 max-w-md text-charcoal/70">
+          New work is on its way — check back soon.
+        </Text>
+      </div>
+    );
+  }
 
-      {works.length === 0 ? (
-        <div className="mt-10 rounded-xl border border-dashed border-charcoal/30 bg-charcoal/5 px-6 py-16 text-center">
-          <Text as="h2" className="font-display text-2xl text-charcoal">
-            No frames yet
-          </Text>
-          <Text className="mx-auto mt-2 max-w-md text-charcoal/70">
-            New work is on its way — check back soon.
-          </Text>
-        </div>
-      ) : (
-        <ul aria-label="All frames" className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {works.map((work) => (
-            <li key={work.id}>
-              <WorkCard work={work} />
-            </li>
-          ))}
-        </ul>
-      )}
-    </Container>
+  return (
+    <ul aria-label="All frames" className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {works.map((work) => (
+        <li key={work.id}>
+          <WorkCard work={work} />
+        </li>
+      ))}
+    </ul>
   );
 }
